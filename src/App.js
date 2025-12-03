@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import Hello from "./components/Hello";
+import Login from "./components/Login";
+import Weather from "./components/Weather";
+import "./styles/App.css";
+import Todos from "./components/Todos";
+import Quotes from "./components/Quotes";
 
-function App() {
+const App = () => {
+  const [userName, setUserName] = useState(null);
+  const handleLogin = (data) => {
+    localStorage.setItem("USER_NAME", data);
+    setUserName(data);
+  };
+  const handleLogout = () => {
+    localStorage.removeItem("USER_NAME");
+    localStorage.clear();
+    // setUserName("");
+    // 전체 페이지 새로고침
+    window.location.reload();
+  };
+  useEffect(() => {
+    // 로컬 스토리지에 userName이 있는지 확인
+    const saved = localStorage.getItem("USER_NAME");
+    setUserName(saved);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id="app">
+      <Weather />
+      {userName ? (
+        <Hello user={userName} onLogout={handleLogout} />
+      ) : (
+        <Login onLogin={handleLogin} />
+      )}
+      <Todos />
+      <Quotes/>
+
     </div>
   );
-}
+};
 
 export default App;

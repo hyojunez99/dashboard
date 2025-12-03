@@ -1,0 +1,201 @@
+@charset "utf-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+#root {
+  width: 100%;
+  height: 100vh;
+  padding: 2rem;
+  background-color: bisque;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+}
+/* --- app 페이지 --- */
+#app {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 4rem;
+}
+/* --- 날씨 페이지 --- */
+#weather-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+#weather-page .weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  border-radius: 1rem;
+}
+#weather-page .top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+#weather-page .top p:nth-of-type(1) {
+  font-size: 24px;
+  font-weight: bolder;
+}
+#weather-page .top img {
+  width: 72px;
+  height: 72px;
+}
+
+/* --- login페이지 --- */
+#login-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 36px;
+}
+#login-page h2 {
+  font-size: 40px;
+}
+#login-page .login-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#login-page .login-box input {
+  width: 300px;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 2px solid #fff;
+}
+#login-page .login-box button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* --- hello-page --- */
+#hello-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#hello-page .logout-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#hello-page .logout-box h2 {
+  font-size: 40px;
+}
+
+#hello-page .logout-box button {
+  width: 49px;
+  height: 49px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* --- todo-form --- */
+#todo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+}
+
+#todo-form .todo-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 1.2rem;
+  min-height: 8rem;
+  box-sizing: border-box;
+  gap: 1rem;
+}
+
+#todo-form .todo-box p {
+  font-size: 20px;
+  font-weight: bold;
+  padding-bottom: 1rem;
+}
+
+#todo-form .todo-box form {
+  width: 100%;
+}
+
+#todo-form .todo-box input {
+  width: 100%;
+  height: 2.5rem;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* --- TodoList ---*/
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+#todo-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  height: 2.5rem;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+#todo-list input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}
+#todo-list button {
+  width: 20px;
+  height: 20px;
+}
