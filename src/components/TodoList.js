@@ -1,6 +1,11 @@
 const TodoList = ({ todos, onDel, onToggle }) => {
+  const listStyle = {
+    maxHeight: "calc(3*3.5rem)",
+    overflowY: "auto",
+    paddingRight: todos.length > 3 ? "0.5rem" : "0",
+  };
   return (
-    <ul id="todo-list">
+    <ul id="todo-list" style={listStyle}>
       {todos.map((list, idx) => {
         return (
           <li key={idx}>
@@ -14,8 +19,8 @@ const TodoList = ({ todos, onDel, onToggle }) => {
             <span
               style={{
                 textDecoration: list.done ? "line-through" : "none",
-                textDecorationColor: list.done ? "rgba(255,0,0,0.5)" : "none",
-                textDecorationThickness: list.done ? "10px" : "none",
+                textDecorationColor: list.done ? "#222" : "none",
+                textDecorationThickness: list.done ? "3px" : "none",
               }}
             >
               {list.todo}

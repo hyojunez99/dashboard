@@ -9,16 +9,16 @@ const Login = ({onLogin}) => {
   
   return (
     <form id="login-page" onSubmit={handleSubmit}>
-      <h2>이름을 입력하세요</h2>
       <div className="login-box">
       <input
         type="text"
         value={user}
+        placeholder="이름을 입력하세요"
         onChange={(e) => {
           setUser(e.target.value);
         }}
       />
-      <button type="submit">로그인</button>
+      <button type="submit"><p>로그인</p></button>
       </div>
     </form>
   );

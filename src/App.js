@@ -5,6 +5,8 @@ import Weather from "./components/Weather";
 import "./styles/App.css";
 import Todos from "./components/Todos";
 import Quotes from "./components/Quotes";
+import Timer from "./components/Timer";
+import Clock from "./components/Clock";
 
 const App = () => {
   const [userName, setUserName] = useState(null);
@@ -27,14 +29,17 @@ const App = () => {
   return (
     <div id="app">
       <Weather />
+      <Clock />
       {userName ? (
         <Hello user={userName} onLogout={handleLogout} />
       ) : (
         <Login onLogin={handleLogin} />
       )}
-      <Todos />
-      <Quotes/>
-
+      <div className="bottom">
+        <Todos />
+        <Quotes />
+        <Timer />
+      </div>
     </div>
   );
 };
